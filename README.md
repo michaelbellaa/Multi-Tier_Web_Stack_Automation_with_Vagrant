@@ -8,10 +8,10 @@ The environment consists of five specialized Virtual Machines (VMs) communicatin
 | Hostname | Role | Os | IP Address | RAM |
 |----------|------|----|------------|-----|
 | web01    | Nginx(load balancer, proxy) | Ubuntu 22.04   | 192.168.56.11       |    1024 MB |
-| App01    | Tomcat (App Server) |  CentOS Stream 9  | 192.168.56.12       |  1024 MB   |
+| App01    | Tomcat (App Server) |  CentOS Stream 9  | 192.168.56.12       |  2048 MB   |
 | rmq01 | RabbitMQ (Broker) | CentOS Stream 9 |  192.168.56.13 | 1024 MB|
-| mc01
-| db01
+| mc01 | Memcached (Cache) | CentOS Stream 9 | 192.168.56.14 | 1024 MB |
+| db01 | MariaDB (Database) | CentOS Stream 9 | 192.168.56.15 | 1024 MB |
 
 # Key Features
 Service Discovery: Integrated vagrant-hostmanager to automatically update /etc/hosts on all nodes.
