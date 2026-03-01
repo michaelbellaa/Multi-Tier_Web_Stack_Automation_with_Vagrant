@@ -5,17 +5,13 @@ each service runs on a dedicated virtual machine.
 # Architecture Components
 The environment consists of five specialized Virtual Machines (VMs) communicating over a private network:
 
-Hostname	        Role	                      OS	                   IP Address	         RAM
-
-web01,Nginx (Load Balancer),Ubuntu 22.04,192.168.56.11,1024 MB
-
-app01	  -    Tomcat (App Server)	        CentOS Stream 9	       192.168.56.12	     2048 MB
-
-rmq01	  -    RabbitMQ (Broker)	          CentOS Stream 9	       192.168.56.13	     1024 MB
-
-mc01	  -    Memcached (Cache)	          CentOS Stream 9	       192.168.56.14	     1024 MB
-
-db01	  -    MariaDB (Database)	        CentOS Stream 9	       192.168.56.15	     1024 MB
+| Hostname | Role | Os | IP Address | RAM |
+|----------|------|----|------------|-----|
+| web01    | Nginx(load balancer, proxy) | Ubuntu 22.04   | 192.168.56.11       |    1024 |
+| App01    | Data |    | Data       |     |
+| rmq01
+| mc01
+| db01
 
 # Key Features
 Service Discovery: Integrated vagrant-hostmanager to automatically update /etc/hosts on all nodes.
