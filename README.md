@@ -4,17 +4,18 @@ each service runs on a dedicated virtual machine.
 
 # Architecture Components
 The environment consists of five specialized Virtual Machines (VMs) communicating over a private network:
-Hostname	  Role	                      OS	                   IP Address	         RAM
 
-web01	      Nginx (Load Balancer)	      Ubuntu 22.04	         192.168.56.11	     1024 MB
+Hostname	        Role	                      OS	                   IP Address	         RAM
 
-app01	      Tomcat (App Server)	        CentOS Stream 9	       192.168.56.12	     2048 MB
+web01,Nginx (Load Balancer),Ubuntu 22.04,192.168.56.11,1024 MB
 
-rmq01	      RabbitMQ (Broker)	          CentOS Stream 9	       192.168.56.13	     1024 MB
+app01	  -    Tomcat (App Server)	        CentOS Stream 9	       192.168.56.12	     2048 MB
 
-mc01	      Memcached (Cache)	          CentOS Stream 9	       192.168.56.14	     1024 MB
+rmq01	  -    RabbitMQ (Broker)	          CentOS Stream 9	       192.168.56.13	     1024 MB
 
-db01	      MariaDB (Database)	        CentOS Stream 9	       192.168.56.15	     1024 MB
+mc01	  -    Memcached (Cache)	          CentOS Stream 9	       192.168.56.14	     1024 MB
+
+db01	  -    MariaDB (Database)	        CentOS Stream 9	       192.168.56.15	     1024 MB
 
 # Key Features
 Service Discovery: Integrated vagrant-hostmanager to automatically update /etc/hosts on all nodes.
@@ -32,14 +33,17 @@ The hostmanager plugin: vagrant plugin install vagrant-hostmanager.
 
 # Deployment
 1.Clone the repository:
+
 git clone https://github.com/michaelbellaa/Multi-Tier_Web_Stack_Automation_with_Vagrant.git
 cd Multi-Tier_Web_Stack_Automation_with_Vagrant
 
 2.Provision the stack:
-# This will download boxes, configure networking, and run all scripts
+
+This will download boxes, configure networking, and run all scripts
 vagrant up
 
 3.Verify Services:
+
 You can access the application via the Load Balancer IP: http://192.168.56.11 .
 
 # Repository Structure
