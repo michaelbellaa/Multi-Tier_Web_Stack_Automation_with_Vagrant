@@ -20,7 +20,9 @@ Hybrid OS Support: Seamlessly orchestrates both Debian (Ubuntu) and RHEL (CentOS
 
 # Prerequisites
 [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
 [Install Vagrant](https://developer.hashicorp.com/vagrant/install)
+
 The hostmanager plugin: vagrant plugin install vagrant-hostmanager.
 
 # Deployment
